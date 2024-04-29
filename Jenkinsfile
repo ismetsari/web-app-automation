@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'username/mywebapp:latest'
+        DOCKER_IMAGE = 'ismesari/mywebapp:latest'
         REGISTRY_CREDENTIALS = 'docker-hub-credentials'
     }
 
