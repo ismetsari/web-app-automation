@@ -12,15 +12,6 @@ pipeline {
     }
 
     stages {
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    // Build the Docker image
-                   //  docker.build(env.DOCKER_IMAGE)
-                }
-            }
-        }
-
         stage('Push Docker Image') {
             steps {
                 script {
