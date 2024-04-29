@@ -18,7 +18,6 @@ pipeline {
                     // Login and push the Docker image to Docker Hub
                     withCredentials([usernamePassword(credentialsId: '0748e697-4d3d-4b54-a73e-7685d05ca0c5', usernameVariable: 'REGISTRY_USER', passwordVariable: 'REGISTRY_PASS')]) {
                     echo "Logging in with ${env.REGISTRY_USER}"
-                    sh 'docker login -u $REGISTRY_USER -p $REGISTRY_PASS'
                     }
                     docker.withRegistry('https://registry.hub.docker.com', env.REGISTRY_CREDENTIALS) {
                         docker.image(env.DOCKER_IMAGE).push()
