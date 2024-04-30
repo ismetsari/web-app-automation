@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'ismesari/mywebapp:latest'
+        DOCKER_IMAGE = 'ismesari/mywebapp'
     }
 
     triggers {
@@ -16,6 +16,7 @@ pipeline {
                 script {
                     // Build the Docker image
                     docker.build(env.DOCKER_IMAGE)
+                    docker.push(env.DOCKER_IMAGE)
                 }
             }
         }
@@ -44,7 +45,7 @@ pipeline {
                     sh 'docker rm mywebapp || true'
 
                     // Run a new container with the updated image
-                    appImage.run("--name mywebapp -d -p 3000:3000")
+                    appImage.run("--name mywebapp -d -p 8080:8080")
                 }
             }
         }
