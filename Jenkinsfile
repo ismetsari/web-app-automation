@@ -16,7 +16,6 @@ pipeline {
                 script {
                     // Build the Docker image
                     docker.build(env.DOCKER_IMAGE)
-                    docker.push(env.DOCKER_IMAGE)
                 }
             }
         }
@@ -29,6 +28,7 @@ pipeline {
                     echo "Logging in with ${env.REGISTRY_USER}"
                     sh 'docker login -u $REGISTRY_USER -p $REGISTRY_PASS'
                     }
+                    docker.image(env.DOCKER_IMAGE).push()
                 }
             }
         }
