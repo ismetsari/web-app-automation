@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'ismesari/mywebapp'
+        DOCKER_IMAGE = 'ismesari/mywebapp:latest'
     }
 
     triggers {
