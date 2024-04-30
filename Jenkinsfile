@@ -44,7 +44,7 @@ pipeline {
                     sh 'docker rm mywebapp || true'
 
                     // Run a new container with the updated image
-                    appImage.run("--name mywebapp -d -p 8080:8080")
+                    appImage.run("--name mywebapp -d -p 3000:3000")
                 }
             }
         }
