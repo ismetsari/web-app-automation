@@ -16,7 +16,6 @@ pipeline {
                 script {
                     // Build the Docker image
                     docker.build(env.DOCKER_IMAGE)
-                    docker.push(env.DOCKER_IMAGE)
                 }
             }
         }
